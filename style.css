@@ -1,0 +1,140 @@
+:root {
+  --color-dark: #2a2a2a;
+  --color-yellow: #ffca2f;
+  --body-bg: #fff;
+  --text-color: #000;
+  --link-color: #0e76a8;
+  --border-color: #2a2a2a;
+  --dark-bg: #2a2a2a;
+  --dark-text-color: #fff;
+  --dark-link-color: #ffca2f;
+  --dark-border-color: #fff;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+ul {
+  list-style: none;
+}
+
+.wrapper {
+  background: var(--body-bg);
+  min-height: 100vh;
+  color: var(--text-color);
+}
+
+.dark-mode-checkbox:checked + .wrapper {
+  --body-bg: var(--dark-bg);
+  --text-color: var(--dark-text-color);
+  --link-color: var(--dark-link-color);
+  --border-color: var(--dark-border-color);
+}
+
+#darkmode {
+  display: none;
+  position: fixed;
+  top: 6rem;
+  left: 1rem;
+}
+
+.dark-mode-toggler {
+  position: fixed;
+  top: 8rem;
+  left: 2rem;
+  cursor: pointer;
+}
+.dark-mode-toggler:hover {
+  transform: scale(1.5);
+  transition: all 0.5s;
+}
+
+.primary-header {
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--body-bg);
+  color: var(--text-color);
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.219);
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+.primary-header .logo {
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+}
+.primary-header .logo div:nth-child(1) {
+  font-size: 1.8rem;
+}
+.primary-header .logo div:nth-child(2) {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.primary-header .logo .line::before {
+  content: "";
+  background: var(--color-yellow);
+  height: 60%;
+  width: 5px;
+  left: 45%;
+  position: absolute;
+}
+.primary-header .right #check, .primary-header .right .menu-icon {
+  display: none;
+}
+.primary-header .right .navigation {
+  padding: 0;
+  margin: 0;
+  gap: 2.5rem;
+}
+.primary-header .right .navigation li a:hover {
+  color: var(--color-yellow);
+  transition: all 0.5s;
+}
+
+.wrapper {
+  background: #000;
+}
+
+@media (width <= 760px) {
+  .primary-header .right .menu-icon {
+    display: block;
+  }
+  .primary-header .right .navigation {
+    flex-direction: column;
+    width: 15rem;
+    height: 100vh;
+    background: var(--body-bg);
+    position: fixed;
+    top: 4.7rem;
+    left: 100%;
+    transition: 0.5s ease-in;
+    box-shadow: 0 0 0 1px solid rgba(128, 128, 128, 0.153);
+  }
+  .primary-header .right .navigation li {
+    padding-left: 1rem;
+  }
+  .primary-header .right #check:checked ~ ul {
+    left: calc(100% - 15rem);
+  }
+}/*# sourceMappingURL=style.css.map */

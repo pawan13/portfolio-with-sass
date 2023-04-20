@@ -1,0 +1,8 @@
+@mixin tablet(){
+    .wrapper{
+        background: #000;
+    }
+    @media(width <= 760px){
+        @content;
+    }
+}
