@@ -14,7 +14,6 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -29,6 +28,11 @@ a {
 
 .flex {
   display: flex;
+  gap: 1rem;
+}
+
+.grid {
+  display: grid;
   gap: 1rem;
 }
 
@@ -112,10 +116,6 @@ ul {
   transition: all 0.5s;
 }
 
-.wrapper {
-  background: #000;
-}
-
 @media (width <= 760px) {
   .primary-header .right .menu-icon {
     display: block;
@@ -137,4 +137,93 @@ ul {
   .primary-header .right #check:checked ~ ul {
     left: calc(100% - 15rem);
   }
+}
+.section1 {
+  background: var(--color-yellow);
+  margin: 10rem auto 5rem auto;
+  grid-template-areas: "left right";
+  padding: 0 2rem;
+  width: 90vw;
+}
+.section1 .left {
+  grid-area: left;
+  margin-top: -4rem;
+  justify-content: center;
+  align-items: center;
+}
+.section1 .left img {
+  height: 115%;
+}
+.section1 .right {
+  grid-area: right;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+.section1 .right div {
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.section1 .right div .name {
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+}
+.section1 .right div .tag {
+  color: white;
+  font-size: 2.2rem;
+}
+.section1 .right button {
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  background: var(--color-dark);
+  color: white;
+  margin: 1rem 0;
+}
+.section1 .right button a i {
+  color: var(--color-yellow);
+}
+
+.section2 .info-container {
+  max-width: 80%;
+  margin: auto;
+  padding: 2rem;
+  min-height: 7rem;
+  border: 2px solid var(--border-color);
+  border-radius: 100px;
+  justify-content: center;
+  align-items: center;
+}
+.section2 .info-container .info-lists {
+  width: 100%;
+  color: var(--text-color);
+  justify-content: space-around;
+  align-items: center;
+}
+.section2 .info-container .info-lists .info-content .icon-container {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--color-yellow);
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+}
+.section2 .info-container .info-lists .info-content .icon-container i {
+  font-size: 1.4rem;
+}
+.section2 .info-container .info-lists .info-content span h5 {
+  font-weight: bolder;
+  letter-spacing: 2px;
+}
+.section2 .info-container .info-lists .info-content span p {
+  color: var(--color-yellow);
+}
+.section2 .info-container .info-lists .info-divider {
+  width: 2px;
+  height: 35px;
+  background: grey;
 }/*# sourceMappingURL=style.css.map */

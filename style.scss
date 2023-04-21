@@ -18,7 +18,7 @@ $font-stack: 'Montserrat', sans-serif;
 *{
     margin: 0;
     box-sizing: border-box;
-    font-family: $font-stack;
+    // font-family: $font-stack;
     scroll-behavior: smooth;
 }
 
@@ -33,6 +33,11 @@ a{
 
 .flex{
     display: flex;
+    gap: 1rem;
+}
+
+.grid{
+    display: grid;
     gap: 1rem;
 }
 
@@ -168,4 +173,118 @@ ul{
         }
     }
 }
+}
+
+// section1 
+.section1 {
+    background: var(--color-yellow);
+    margin: 10rem auto 5rem auto;
+    grid-template-areas: "left right";
+    padding: 0 2rem;
+    width: 90vw;
+
+    .left{
+        grid-area: left;
+        margin-top: -4rem;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            height: 115%;
+        }
+    }
+    .right{
+        grid-area: right;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 0.8rem;
+
+        div{
+            flex-direction: column;
+            gap: 0.6rem;
+
+            .name{
+                font-size: 4rem;
+                font-weight: bold;
+                color: white;
+            }
+
+            .tag{
+                color: white;
+                font-size: 2.2rem;
+            }
+        }
+        button{
+            border: none;
+            padding: 0.8rem 1.2rem;
+            border-radius: 2rem;
+            cursor: pointer;
+            background: var(--color-dark);
+            color: white;
+            margin: 1rem 0;
+
+            a{
+            i{
+                color: var(--color-yellow);
+            }
+        }
+        }
+    }
+}
+
+// section2
+
+.section2{
+    .info-container{
+        max-width: 80%;
+        margin: auto;
+        padding: 2rem;
+        min-height: 7rem;
+        border:  2px solid var(--border-color);
+        border-radius: 100px;
+
+        justify-content: center;
+        align-items: center;
+
+        .info-lists{
+            width: 100%;
+            color: var(--text-color);
+
+            justify-content: space-around;
+            align-items: center;
+
+            .info-content{
+                .icon-container{
+                    width: 3rem;
+                    height: 3rem;
+                    border-radius: 50%;
+                    background: var(--color-yellow);
+                    color: #fff;
+
+                    justify-content: center;
+                    align-items: center;
+
+                    i{
+                        font-size: 1.4rem;
+                    }
+                }
+                span{
+                    h5{
+                        font-weight: bolder;
+                        letter-spacing: 2px;
+                    }
+                    p{
+                        color: var(--color-yellow);
+                    }
+                }
+            }
+
+            .info-divider{
+                width: 2px;
+                height: 35px;
+                background: grey;
+            }
+        }
+    }
 }
