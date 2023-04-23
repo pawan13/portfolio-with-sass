@@ -41,6 +41,11 @@ a{
     gap: 1rem;
 }
 
+.title{
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
 ul{
     list-style: none;
 }
@@ -175,14 +180,17 @@ ul{
 }
 }
 
-// section1 
-.section1 {
-    background: var(--color-yellow);
-    margin: 10rem auto 5rem auto;
-    grid-template-areas: "left right";
-    padding: 0 2rem;
-    width: 90vw;
 
+
+// section1 home or hero section
+.section1 {
+    padding-top: 12rem;
+    .hero{
+    background: var(--color-yellow);
+    margin: 0 auto 5rem auto;
+    grid-template-areas: "left right";
+    padding: 0rem 2rem;
+    width: 90vw;
     .left{
         grid-area: left;
         margin-top: -4rem;
@@ -232,8 +240,23 @@ ul{
         }
     }
 }
+}
 
-// section2
+//tablet mode 
+@include tablet(){
+   .section1{
+    .hero{
+        grid-template-areas: 'left'
+        'right';
+
+        .right{
+            align-items: center;
+        }
+    }
+   }
+}
+
+// section2 banner 
 
 .section2{
     .info-container{
@@ -286,5 +309,307 @@ ul{
                 background: grey;
             }
         }
+    }
+}
+
+// section2 banner in tablet
+@include tablet(){
+    .section2{
+        .info-container{
+            .info-lists{
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .info-content{
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+
+                .info-divider{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// section3 skills
+.section3{
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 10rem;
+    .skills-container{
+        justify-content: center;
+        align-items: center;
+        gap: 8rem;
+
+        div{
+            flex-direction: column;
+            align-items: center;
+            font-weight: bolder;
+
+            i{
+                font-size: 3rem;
+            }
+        }
+    }
+}
+
+//section3 skills section in tablet
+@include tablet(){
+    .section3{
+        .skills-container{
+            gap: 2rem;
+        }
+    }
+}
+
+//section4 projects
+.section4{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10rem;
+
+    .projects-container{
+        width: 100%;
+        padding: 1rem 2rem 0 2rem;
+
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2.5rem;
+
+        .project-card{
+            flex-direction: column;
+            box-shadow: 0 4px 12px 4px rgba(0, 0, 0, 0.31);
+            border-radius: 10px;
+            .top{
+                img{
+                    width: 100%;
+                    height: 250px;
+                    border-radius: 10px 10px 0 0;
+                }
+            }
+            .bottom{
+                padding: 2rem;
+
+                p{
+                    &:nth-child(1){
+                        font-weight: bolder;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// section5 about me
+.section5{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 4rem;
+    padding-top: 7rem;
+
+
+    .about-container{
+        padding: 1rem 3rem;
+
+        .left{
+            width: 50%;
+            padding: 0 2rem;
+
+            img{
+                width: 100%;
+                height: 65vh;
+            }
+        }
+
+        .right{
+            flex-direction: column;
+            width: 50%;
+            gap: 2rem;
+            padding: 0 2rem;
+
+            h2{
+                font-size: 3.5rem;
+            }
+
+            p{
+               &:nth-child(3){
+                font-weight: 600;
+               } 
+            }
+
+            div{
+                flex-direction: column;
+                .tag{
+                    font-weight: 600;
+                }
+                div{
+                    flex-direction: row;
+                    gap: 2rem;
+
+                    span{
+                        padding: 0.5rem 0.7rem;
+                        &:hover{
+                            background: rgba(128, 128, 128, 0.709);
+                            border-radius: 1rem;
+                            cursor: pointer;
+                            color: white;
+                            box-shadow: 0 0 10px grey;
+                            transition: all 0.5s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// section5 about me in tablet
+@include tablet(){
+    .section5{
+        padding-top: 8rem;
+        .about-container{
+            flex-direction: column;
+            .left{
+                width: 100%;
+                padding: 0 2rem;
+    
+                img{
+                    width: 100%;
+                }
+            }
+
+            .right{
+                width: 100%;
+            }
+        }
+    }
+}
+ 
+//section6 contact
+.section6{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8rem;
+
+    .socials{
+        padding: 4rem;
+        width: 100%;
+        justify-content: space-around;
+
+        a{
+                font-size: 4rem;
+                &:nth-child(1){
+                    color: blue;
+                }
+                &:nth-child(2){
+                    color: #6e5494;
+                }
+                &:nth-child(3){
+                    color: skyblue;
+                }
+                &:nth-child(4){
+                    color: red;
+                }
+        }
+    }
+
+    .email-section{
+        background-color: var(--border-color);
+        padding: 1rem 2rem;
+        border-radius: 100px;
+        color: var(--body-bg);
+        .email{
+            justify-content: center;
+            align-items: center;
+           .send{
+            width: 3rem;
+            height: 3rem;
+            background: var(--color-yellow);
+            border-radius: 50%;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+        }
+        
+    }
+}
+
+// Scroll to top button
+.to-top{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--color-yellow);
+
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    justify-content: center;
+    align-items: center;
+    div{
+        i{
+            color:white;
+        }
+    }
+}
+
+//footer
+footer{
+    background: #000;
+    color: white;
+    padding: 4rem;
+    margin-top: 2rem;
+
+    .footer-container{
+        justify-content: space-around;
+        margin-bottom: 4rem;
+        .links, .socials{
+            flex-direction: column;
+            h3{
+                text-transform: uppercase;
+            }
+            ul{
+                flex-direction: column;
+                padding: 0;
+
+                li{
+                    a{
+                        &:hover{
+                            color: var(--color-yellow);
+                            transition: all .5s;
+                        }
+                    }
+                }
+            }
+        }
+        
+
+    }
+
+    .footer-bottom{
+        text-align: center;
+    }
+}
+
+//footer in tablet 
+@include tablet(){
+    footer{
+        .footer-container{
+            flex-direction: column;
+
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+    
+       
     }
 }
